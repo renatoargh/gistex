@@ -1,6 +1,6 @@
 {
   "name": "gistex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/renatoargh/gistex/issues"
   },
-  "homepage": "https://github.com/renatoargh/gistex#readme"
+  "homepage": "https://github.com/renatoargh/gistex#readme",
+  "dependencies": {
+    "github": "^13.0.1"
+  }
 }
