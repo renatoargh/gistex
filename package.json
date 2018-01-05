@@ -1,0 +1,22 @@
+{
+  "name": "gistex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatoargh/gistex.git"
+  },
+  "bin": {
+    "gistex": "index.js"
+  },
+  "author": "Renato Gama <renato@gammasoft.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renatoargh/gistex/issues"
+  },
+  "homepage": "https://github.com/renatoargh/gistex#readme"
+}
