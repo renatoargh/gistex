@@ -4,6 +4,7 @@ const GitHubApi = require('github')
 const assert = require('assert')
 const fs = require('fs')
 const path = require('path')
+const _ = require('underscore')
 
 const { PWD, GITHUB_TOKEN } = process.env
 const gistexPath = path.join(PWD, 'gistex.json')
@@ -21,8 +22,20 @@ Object.keys(config.files).forEach(relativeFilePath => {
     gistFileName = gistFileName.substring(1)
   }
 
+  let { footer = '' } = config
+  if (footer) {
+    footer = _.template(footer)
+    footer = '\n' + footer({ pkg, relativeFilePath })
+  }
+
+  let { header = '' } = config
+  if (header) {
+    header = _.template(header)
+    header = header({ pkg, gistFileName }) + '\n'
+  }
+
   files[gistFileName] = {
-    content: fs.readFileSync(filePath).toString()
+    content: header + fs.readFileSync(filePath).toString() + footer
   }
 })
 
